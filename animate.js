@@ -16,10 +16,12 @@ var main = function()
 		var currentDot = $('.active-dot');
 		var nextDot = currentDot.next();
 
-//if the slide reaches the last , Then nextslide will equals to firstslide
+//if the slide reaches the last , Then nextslide will equals to firstslide and the nextdot equals to first dot  
 		if(nextSlide.length==0)
 		{
 			var nextSlide = $('.slide').first();
+			var nextDot = $('.dot').first();
+
 		}
 
 		currentSlide.fadeOut(600).removeClass('.active-slide');
