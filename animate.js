@@ -12,13 +12,21 @@ var main = function()
 	{
 		var currentSlide = $('.active-slide');
 		var nextSlide = currentSlide().next;
-		currentSlide.fadeOut(600).removeClass('.active-slide');
-		nextSlide.fadeIn(600).addClass('.active-slide');
+//create the currentDot class and nextDot
+		var currentDot = $('.active-dot');
+		var nextDot = currentDot.next();
+
 //if the slide reaches the last , Then nextslide will equals to firstslide
 		if(nextSlide.length==0)
 		{
 			var nextSlide = $('.slide').first();
 		}
+
+		currentSlide.fadeOut(600).removeClass('.active-slide');
+		nextSlide.fadeIn(600).addClass('.active-slide');
+//Change the active-dot when the slide changes through the arrow-next
+		currentDot.removeClass('active-dot');
+		nextDot.addClass('active-dot');
 	});
 }
 
