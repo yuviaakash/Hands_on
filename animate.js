@@ -14,6 +14,11 @@ var main = function()
 		var nextSlide = currentSlide().next;
 		currentSlide.fadeOut(600).removeClass('.active-slide');
 		nextSlide.fadeIn(600).addClass('.active-slide');
+//if the slide reaches the last , Then nextslide will equals to firstslide
+		if(nextSlide.length==0)
+		{
+			var nextSlide = $('.slide').first();
+		}
 	});
 }
 
