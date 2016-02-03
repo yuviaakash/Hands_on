@@ -30,6 +30,28 @@ var main = function()
 		currentDot.removeClass('active-dot');
 		nextDot.addClass('active-dot');
 	});
+	$('.prev-next').click(function()
+	{
+		var currentSlide = $('.active-slide');
+		var prevSlide = currentSlide().prev;
+//create the currentDot class and prevDot
+		var currentDot = $('.active-dot');
+		var prevDot = currentDot.prev();
+
+//if the slide reaches the first , Then prevslide will equals to lastslide and the prevdot equals to lastdot  
+		if(prevSlide.length==0)
+		{
+			var prevSlide = $('.slide').first();
+			var prevDot = $('.dot').first();
+
+		}
+
+		currentSlide.fadeOut(600).removeClass('.active-slide');
+	    prevSlide.fadeIn(600).addClass('.active-slide');
+//Change the active-dot when the slide changes through the arrow-prev
+		currentDot.removeClass('active-dot');
+		prevDot.addClass('active-dot');
+	});
 }
 
 $(document).ready(main);
